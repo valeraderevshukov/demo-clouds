@@ -1,0 +1,170 @@
+{% import "partials/_mixins.html" as mixins %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="css/app.css">
+    {# {% include "../partials/_media-tags.html" %} #}
+    <style>
+      *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0
+      }
+      body {
+        color: #eee;
+        text-shadow: 0 -1px 0 rgba( 0, 0, 0, .6 );
+        font-family: 'Open Sans', sans-serif;
+        font-size: 13px;
+        line-height: 16px;
+      }
+      #viewport {
+        -webkit-perspective: 1000;
+        -moz-perspective: 1000;
+        -o-perspective: 1000;
+        
+        position: relative;
+        height: 1270px;
+        width: 100%;
+        overflow: hidden;
+        background-color: #000;
+      }
+
+      #world {
+        position: relative;
+        height: 1270px;
+        width: 100%;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+      }
+
+      #world div {
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+      }
+
+      .cloudBase {
+        position: absolute;
+        left: 256px;
+        top: 256px;
+        width: 20px;
+        height: 20px;
+        margin-left: -10px;
+        margin-top: -10px;
+      }
+      .cloudBase-1 {
+        position: absolute;
+        bottom: 200px;
+        left: 0;
+      }
+      .cloudBase-2 {
+        position: absolute;
+        bottom: 500px;
+        left: 15%;
+      }
+      .cloudBase-3 {
+        position: absolute;
+        bottom: 500px;
+        left: 30%;
+      }
+      .cloudBase-4 {
+        position: absolute;
+        bottom: 500px;
+        left: 40%;
+      }
+      .cloudBase-5 {
+        position: absolute;
+        bottom: 500px;
+        left: 60%;
+      }
+      .cloudBase-6 {
+        position: absolute;
+        bottom: 500px;
+        left: 70%;
+      }
+      .cloudBase-7 {
+        position: absolute;
+        bottom: 500px;
+        left: 85%;
+      }
+      .cloudBase-8 {
+        position: absolute;
+        bottom: 500px;
+        left: 100%;
+      }
+      .cloudBase-9 {
+        position: absolute;
+        top: 200px;
+        left: 25%;
+      }
+      .cloudBase-10 {
+        position: absolute;
+        top: 230px;
+        left: 30%;
+      }
+      .cloudBase-11 {
+        position: absolute;
+        top: 250px;
+        left: 40%;
+      }
+      .cloudBase-12 {
+        position: absolute;
+        top: 300px;
+        left: 50%;
+      }
+      .cloudBase-13 {
+        position: absolute;
+        top: 250px;
+        left: 50%;
+      }
+      .cloudBase-14 {
+        position: absolute;
+        top: 230px;
+        left: 60%;
+      }
+      .cloudBase-15 {
+        position: absolute;
+        top: 200px;
+        left: 70%;
+      }
+      .cloudBase-16 {
+        position: absolute;
+        top: 180px;
+        left: 55%;
+      }
+
+      .cloudLayer {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 256px;
+        height: 256px;
+        margin-left: -128px;
+        margin-top: -128px;
+        -webkit-transition: opacity .5s ease-out;
+        -moz-transition: opacity .5s ease-out;
+        -o-transition: opacity .5s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- BEGIN content -->
+    <div class="out">
+      {% block content %}{% endblock %}
+    </div>
+    <!-- END content -->
+
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- END scripts -->
+
+  </body>
+</html>
